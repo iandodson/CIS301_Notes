@@ -255,26 +255,9 @@ p ∨ (q ∧ r)     is equivalent to       (p ∨ q) ∧ (p ∨ r)
 
 (orDist1.sc and orDist2.sc)
 
+--> complete first, recommend doing second as practice
+
 ////////////////////////////////
-
-Equivalence in if-statements.
-
-Consider this if-statement:
-
-if (extraCredit == true || grade >= 80) {
-    if (extraCredit == true || grade <= 90) {
-        //do stuff
-    }
-}
-
---> translate to propositional logic
-
-
-
---> what is an equivalent, simpler if-statement?
-
-
-///////////////////////////////////
 
 Implies-elimination, ImplyE
 
@@ -326,5 +309,5 @@ p → r,  q → r,  p ∨ q  ⊢ r
 ////////////////////////////////////////
 
 Next time:
-- Finish rules for implies operator (these WILL be on exam 1)
+- Finish rules for implies operator
 - Review for exam

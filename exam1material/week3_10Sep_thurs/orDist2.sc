@@ -11,7 +11,7 @@ import org.sireum.justification.natded.prop._
     ( (p | q ) & (p | r) ) |- ( p | (q & r) )
       Proof(
         //PROOF GOES HERE
-        
+        //Do this one as practice
     )
   )
 }
