@@ -6,12 +6,12 @@ import org.sireum.justification.natded.prop._
 
 
 
-@pure def or1(a: B, b: B, c: B): Unit = {
+@pure def orComm(p: B, q: B): Unit = {
     Deduce(
-        (a) |- (b | a | c)
+        (p | q) |- (q | p)
         Proof(
             //PROOF GOES HERE
-            1 ( a )     by Premise
+            1 ( p | q )     by Premise
         )
     )
 }

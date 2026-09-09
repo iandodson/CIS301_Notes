@@ -105,7 +105,7 @@ Proof(
 
 ///////////////////////////////////////////
 
-Example: or1.sc
+Example: orIntro.sc
 
 ///////////////////////////////////////////
 
@@ -179,7 +179,7 @@ d ( R   )           by OrE(a, b, c)
 
 ////////////////////////////////
 
-Example: prove that OR is commutative (or1.sc)
+Example: prove that OR is commutative (orComm.sc)
 
 p ∨ q       vs      q ∨ p
 
@@ -187,22 +187,6 @@ p ∨ q       vs      q ∨ p
 ////////////////////////////////
 
 (in-class quiz)
-
-////////////////////////////////
-
-Do you think we could prove:
-
-p ∨ q ⊢ p ∧ q
-Proof(
-    1 ( p ∨ q) by Premise,
-    
-
-)
-
-
-
-What is the only way to prove an argument is invalid?
-
 
 ////////////////////////////////
 
