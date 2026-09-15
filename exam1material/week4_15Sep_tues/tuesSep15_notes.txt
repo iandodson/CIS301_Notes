@@ -80,9 +80,9 @@ General proof strategy to this point
 
 1) list premises
 2) break down any premises you can to get extra information
-
+    AND statement - extract both sides
+    IMPLIES statement - see if you already have the left side or can easlity build the left side. Then use ImplyE.
 3) look at the conclusion
-
 4) consider if you will need OrE (probably will if you have an OR)
 
 Always consider order of operations!
@@ -107,32 +107,53 @@ See Canvas announcement for list of topics.
 How to prove two propositional logic statements are 
 equivalent?
 
+Two truth tables - show that all the for every possible input, the statements have the same output
 
+Deduction - Statement1 |- Statement2 AND Statement2 |- Statement1
 
 
 How to prove propositional logic statements are 
 NOT equivalent?
 
+Find one truth assignment where the outputs differ
+(You can't prove with deduction)
+
 
 What is satisfiability? 
 
+I can find at least one truth assignment that makes a statement true
+(Don't need a full truth table)
+
 
 To show NOT satisfiable?
+
+Need to complete a full truth table (Contradictory)
+
+
+Filling in turth tables
+    mark top-level operators
+    fill in under each operator
+    classify it at the bottom
+        Contingent - give truth assignments
 
 
 - Determining whether an argument is valid or invalid
     (what is an argument?)
 
+    argument: set of premises, a conclusion
+        show: premises -> conclusion
 
     valid: 
 
 
     how prove valid?
-
+        truth table: find all truth assignments where EVERY premise is true, make sure the conclusion is also true
+        deduction: premises |- conclusion
 
     how prove invalid?
+        find on truth assignment where all premises are ture but the conclusion is false
 
-
+        can't use deduction in this case
 
 /////////////////////////////////////////
 
