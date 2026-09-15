@@ -5,6 +5,7 @@
 
 //put * over atom itself if no operators
 //don't need to fill out column
+<<<<<<< HEAD
          *         *        *       *       
 ---------------------------------------
 p q # (p ->: !q, p ->: q, p | q) |- q
@@ -13,5 +14,16 @@ T T #    F   F     T        T       T
 T F #    T   T     F        T       F     
 F T #    T   F     T        T       T        
 F F #    T   T     T        F       F    
+=======
+
+         *         *        *       *
+---------------------------------------
+p q # (p ->: !q, p ->: q, p | q) |- q
+---------------------------------------
+T T #    F   F     T        T       T
+T F #    T   T     F        T       F
+F T #    T   F     T        T       T
+F F #    T   T     T        F       F
+>>>>>>> 108a64175c761c1625003f7d155f89809e475965
 ----------------------------------------
 Valid [F T]

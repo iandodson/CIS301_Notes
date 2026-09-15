@@ -24,6 +24,11 @@ if (!(y >= 4 || num != 14) || x <= 0)
 Answer:
 if ((y <4 && num == 14) || x <= 0)
 
+if (!((y >= 4 || num != 14) && x > 0)) 
+if (!(y >= 4 || num != 14) || x <= 0) 
+
+Answer:
+if ((y < 4 && num == 14) || x <= 0) 
 
 //////////////////////////
 
@@ -38,8 +43,15 @@ Satisfiability.
     find a truth assignment that makes the statement true
 
 - what kind of statement is satisfiable? what kind is not?
+<<<<<<< HEAD
     satisfiable: contingent and tautology
     not satisfiable: contradictory
+=======
+    satisfiable: tautology, contingent
+    not satisfiable: contradictory
+
+
+>>>>>>> 108a64175c761c1625003f7d155f89809e475965
 
 
 - is this satisfiable?
@@ -49,6 +61,7 @@ p: T
 q: T
 r: T
 
+<<<<<<< HEAD
 This makes the entire statement true
 
 to show a statement is satisifiable: 
@@ -58,6 +71,23 @@ to show a statement is satisifiable:
 to show a statement is NOT satisfiable: 
     need to fill in the WHOLE truth table
     need to show it is classified as contradictory
+=======
+p: T
+q: T
+r: T
+
+this makes the entire statement true
+
+to show a statement is satisifiable: 
+    just need ONE truth assignment that makes it true 
+    *could* fill in a truth table if you can't find one easily
+
+
+to show a statement is NOT satisfiable: 
+    need to fill in the WHOLE truth table 
+    need to show it is classified as contradictory 
+
+>>>>>>> 108a64175c761c1625003f7d155f89809e475965
 
 ////////////////////////////////
 ∧ ∨ ¬ →
@@ -77,16 +107,34 @@ An argument is of the form:
     IF all the premises really are true, 
     THEN the conclusion is true
 
+<<<<<<< HEAD
 premise1 & premise2 & ... & premiseN -> conclusion
+=======
+premise1 ∧ premise2 ∧ ... ∧ premiseN → conclusion 
+>>>>>>> 108a64175c761c1625003f7d155f89809e475965
 
+--> when is an argument invalid?
+    promise broken
+    all premises are true
+    but conclusion is false
+    considered invalid if this EVER happens for any truth assignment
 
 --> When is an argument considered invalid?
     promise broken
     - all premises are true but the conclusion is false
 
 --> When is an argument considered valid?
+<<<<<<< HEAD
     not invalid
     every truth assignment that made all the premises true, the conclusion is true
+=======
+    not invalid 
+    every truth assignment that made all the premises true 
+        also made the conclusion true 
+
+
+
+>>>>>>> 108a64175c761c1625003f7d155f89809e475965
 
 ///////////////////////////////////////
 
@@ -112,11 +160,34 @@ I want to prove:
 
 --> How would we translate to propositional logic?
 
-
 Propositional atoms:
     p: I'm in the CS department
     q: I'm in the ECE department
+<<<<<<< HEAD
     r: I can log into the lab computers
+=======
+    r: I can log in to the CS lab computers
+
+
+Translations:
+
+Premises:
+    - I am in the CS dept or I am in the ECE dept
+        p ∨ q
+
+    - I am not in the ECE dept
+        ¬q    
+
+    - I can log in to the CS lab computers if
+        I am in the CS dept
+        p → r
+
+
+Conclusion:     - I can log in to the CS lab computers
+        and I am in the CS dept
+
+        r ∧ p
+>>>>>>> 108a64175c761c1625003f7d155f89809e475965
 
 --> How to prove with a truth table?
 Premises:
@@ -124,10 +195,22 @@ Premises:
     !q
     p -> r
 
+<<<<<<< HEAD
 Conclusion
     r && p
 
 Valid: every truth assignment that made all premises ture also made conclusion true
+=======
+Premises: 
+    p ∨ q
+    ¬q
+    p → r
+
+Conclusion: r ∧ p
+
+valid: every truth assignment that made all premises true
+    also made conclusion true 
+>>>>>>> 108a64175c761c1625003f7d155f89809e475965
 
 ////////////////////////////////
 ∧ ∨ ¬ →
@@ -171,6 +254,9 @@ We wish to prove:
 
 When is an argument invalid?
 
+we can find a truth assignment where all premises are true
+but the conclusion is false 
+
 
 
 
@@ -187,6 +273,7 @@ Proposed conclusion:
     
 
 1) Translate to propositional logic
+<<<<<<< HEAD
 p: Chipotle raises their prices
 q: You stop eating at Chipotle
 
@@ -202,6 +289,21 @@ Conclusion:
 p: F
 q: F
 makes both premises ture but makes the conclusion false
+=======
+    p: Chipotle raises their prices
+    q: You stop eating at Chipotle
+
+Premises: p → q, ¬p
+Conclusion: q
+
+
+2) How can we show it is invalid?
+ ONE truth assignment where all premises true, conclusion false
+
+ p: F
+ q: F
+makes both premises true but makes the conclusion false
+>>>>>>> 108a64175c761c1625003f7d155f89809e475965
 
 
 
@@ -219,14 +321,27 @@ Showing arguments are invalid in Logika
 
 ////////////////////////////
 
+<<<<<<< HEAD
 Does it matter if the conclusion is true when the premises aren't?
     doesn't matter
 
 Does it matter if one premise is true when the other isn't?
     irrelevant
+=======
+Does it matter if the conclusion is true when 
+    the premises aren't?
+
+doesn't matter
+
+Does it matter if one premise is true when the other isn't?
+    irrelevant
+
+>>>>>>> 108a64175c761c1625003f7d155f89809e475965
 
 Does it matter if the conclusion is false when some (but not all) of the premises are true?
     doesn't matter
+
+    doesn't matter 
 
 ////////////////////////////
 
@@ -289,7 +404,12 @@ AND rules idea.
    --> in what situations do you think we could do that?
 
 if I already had that P was true
+<<<<<<< HEAD
 and I already had that Q was true
+=======
+and I already had that Q was true 
+
+>>>>>>> 108a64175c761c1625003f7d155f89809e475965
 
 
 2) What if we already had an AND statement like  P ∧ Q.
@@ -298,6 +418,10 @@ and I already had that Q was true
 
 P on its own
 Q on its own
+<<<<<<< HEAD
+=======
+
+>>>>>>> 108a64175c761c1625003f7d155f89809e475965
 
     --> what happened to the AND operator in both cases?
 
@@ -349,7 +473,11 @@ What could we claim with AndI?
 
 
 
+//////////////////////////////////
+∧ ∨ ¬ →
+//////////////////////////////////
 
+<-- stopped here, will continue on Thursday
 
 //////////////////////////////////
 
