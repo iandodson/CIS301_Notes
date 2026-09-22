@@ -1,6 +1,7 @@
 HW 3 due tonight
 
 Exam 1 is Thursday, September 17
+    TA review session: Wed. Sep. 16, 2-4:30, DUE 1118
 
 
 No new homework this week
@@ -66,8 +67,6 @@ Bigger example: prac.sc
 
 /////////////////////////////
 
-/////////////////////////
-
 Logika features/tips
 
 - renumber/reformat proofs
@@ -81,9 +80,21 @@ General proof strategy to this point
 1) list premises
 2) break down any premises you can to get extra information
     AND statement - extract both sides
+<<<<<<< HEAD
     IMPLIES statement - see if you already have the left side or can easlity build the left side. Then use ImplyE.
 3) look at the conclusion
 4) consider if you will need OrE (probably will if you have an OR)
+=======
+    IMPLIES statement - see if you already have the left
+        side or can easily build the left side. Then
+        use ImplyE.
+
+3) look at the conclusion
+
+4) consider if you will need OrE 
+    (probably will if you have an OR)
+
+>>>>>>> 7ad0da7b5bcbf06c4797bf0f8ba19716015cd3ca
 
 Always consider order of operations!
 
@@ -107,25 +118,57 @@ See Canvas announcement for list of topics.
 How to prove two propositional logic statements are 
 equivalent?
 
+<<<<<<< HEAD
 Two truth tables - show that all the for every possible input, the statements have the same output
 
 Deduction - Statement1 |- Statement2 AND Statement2 |- Statement1
+=======
+two truth tables - show that for every possible input,
+    the statements have the same output
+
+deduction - statement1 |- statement2
+    AND statement2 |- statement1
+>>>>>>> 7ad0da7b5bcbf06c4797bf0f8ba19716015cd3ca
 
 
 How to prove propositional logic statements are 
 NOT equivalent?
 
+<<<<<<< HEAD
 Find one truth assignment where the outputs differ
 (You can't prove with deduction)
+=======
+    find ONE truth assignment where the outputs differ 
+
+can't prove not equivalent with deduction
+
+
+>>>>>>> 7ad0da7b5bcbf06c4797bf0f8ba19716015cd3ca
 
 
 What is satisfiability? 
+    I can find at least one truth assignment that makes
+    a statement output true 
 
+<<<<<<< HEAD
 I can find at least one truth assignment that makes a statement true
 (Don't need a full truth table)
 
+=======
+    don't need a full truth table, but could
+>>>>>>> 7ad0da7b5bcbf06c4797bf0f8ba19716015cd3ca
 
 To show NOT satisfiable?
+    need to complete full truth table
+    would be contradictory
+
+
+filling out truth tables
+    mark top-level operators
+    fill in under each operator 
+    classify it at the bottom
+        contingent - give truth assignments 
+
 
 Need to complete a full truth table (Contradictory)
 
@@ -140,18 +183,37 @@ Filling in turth tables
 - Determining whether an argument is valid or invalid
     (what is an argument?)
 
+<<<<<<< HEAD
     argument: set of premises, a conclusion
         show: premises -> conclusion
+=======
+    argument: set of premises, a conclusion 
+        show: premises -> conclusion
+
+>>>>>>> 7ad0da7b5bcbf06c4797bf0f8ba19716015cd3ca
 
     valid: 
 
 
     how prove valid?
+<<<<<<< HEAD
         truth table: find all truth assignments where EVERY premise is true, make sure the conclusion is also true
         deduction: premises |- conclusion
 
     how prove invalid?
         find on truth assignment where all premises are ture but the conclusion is false
+=======
+        truth table: find all truth assignments
+            where EVERY premise is true, make sure
+            the conclusion is also true 
+
+        could also use deduction:
+            premises |- conclusion 
+
+    how prove invalid?
+        find one truth assignment where all premises are
+        true but the conclusion is false
+>>>>>>> 7ad0da7b5bcbf06c4797bf0f8ba19716015cd3ca
 
         can't use deduction in this case
 
