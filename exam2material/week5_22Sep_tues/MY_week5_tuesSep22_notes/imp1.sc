@@ -11,7 +11,15 @@ import org.sireum.justification.natded.prop._
       1 (  p __>: r   ) by Premise,
       2 (  q __>: r   ) by Premise,
 
+      //need to introduce and implies to get p & q __>: r
 
+      3 SubProof(
+        4 Assume ( p & q ),
+        ///goal: RHS of the implies, r
+        5 ( p ) by AndE1(4),
+        6 ( r ) by ImplyE(1, 5)
+      ),
+      7 ( p & q __>: r ) by ImplyI(3)
     )
   )
 }
