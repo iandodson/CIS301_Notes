@@ -11,19 +11,42 @@ import org.sireum.justification.natded.prop._
       1 (  p __>: r   ) by Premise,
       2 (  q __>: r   ) by Premise,
 
+<<<<<<< HEAD
       3 SubProof(
         4 Assume ( p | q ),
         5 SubProof(
           6 Assume ( p ),
           7 ( r ) by ImplyE(1, 6)
+=======
+      //use ImplyI to introduce goal implies
+      3 SubProof(
+        4 Assume ( p | q ), //LHS of implies
+
+        //use OrE on p | q to get r in both cases
+        5 SubProof(
+          6 Assume(p),
+          7 ( r ) by ImplyE(1, 6)
+
+          //goal: r
+>>>>>>> b42fc7f40e7cec1e7a7dc1094fde74abaff6eeff
         ),
         8 SubProof(
           9 Assume ( q ),
           10 ( r ) by ImplyE(2, 9)
         ),
         11 ( r ) by OrE(4, 5, 8)
+<<<<<<< HEAD
       ),
       12 ( p | q __>: r ) by ImplyI(3)
+=======
+
+        //goal: r (RHS of implies)
+      ),
+      12 ( p | q __>: r) by ImplyI(3)
+
+      //goal is an implies statement, p | q __>: r 
+
+>>>>>>> b42fc7f40e7cec1e7a7dc1094fde74abaff6eeff
     )
   )
 }

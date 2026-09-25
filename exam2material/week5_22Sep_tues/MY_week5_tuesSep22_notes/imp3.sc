@@ -10,6 +10,7 @@ import org.sireum.justification.natded.prop._
       Proof(
       1 (  p __>: (q __>: r) ) by Premise,
       2 SubProof(
+<<<<<<< HEAD
         3 Assume ( p __>: q ),
         4 SubProof(
           5 Assume ( p ),
@@ -20,6 +21,27 @@ import org.sireum.justification.natded.prop._
         9 ( p __>: r) by ImplyI(4)
       ),
       10 ((p __>: q) __>: (p __>: r)) by ImplyI(2)
+=======
+        3 Assume (p __>: q), //assume LHS of goal implies
+
+        4 SubProof(
+          5 Assume (p), //LHS of goal implies
+          6 ( q __>: r ) by ImplyE(1, 5),
+          7 ( q ) by ImplyE(3, 5),
+          8 ( r ) by ImplyE(6, 7)
+
+          //goal: r, RHS of goal implies
+        ),
+        9 ( p __>: r) by ImplyI(4)
+
+        //nest implyi to create p __>: r
+        //goal: RHS of implies, p __>: r
+      ),
+      10 ( (p __>: q) __>: (p __>: r) ) by ImplyI(2)
+
+      //goal is implies: (p __>: q) __>: (p __>: r) 
+
+>>>>>>> b42fc7f40e7cec1e7a7dc1094fde74abaff6eeff
     )
   )
 }
