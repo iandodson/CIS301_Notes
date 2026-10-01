@@ -20,15 +20,19 @@ Reminder: set builder notation
 
 
 {x : x ∈ ℤ, x^2 <= 25}
-
+{-5 , -4, -3, -2, -1, 0, 1, 2, 3, 4, 5}
 
 
 {n : n = 3a + 1, a ∈ ℕ, 1 ≤ a ≤ 4}
 
 
 
-{x : n = 2k+5m; k,m ∈ ℕ; 1 ≤ k ≤ 3; 3 ≤ m ≤ 4;}
+{x : x = 2k+5m; k,m ∈ ℕ; 1 ≤ k ≤ 3; 3 ≤ m ≤ 4;}
 
+k: 1, 2, 3
+m: 3, 4
+
+{17, 22, 19, 24, 21, 26} --> {17, 19, 21, 22, 24, 26}
 
 
 //////////////////////////////
@@ -38,17 +42,23 @@ Describe these sets in set builder notation
 
 {5,10,15}
 
+{x : x = 5k, k ∈ ℕ, k ≤ 3}
+
 
 
 {CIS 115, CIS 116, CIS 200, CIS 300, CIS 301}
 
+{x : x is a CIS course and x is in the CIS minor}
 
 
 {2,4,8,16,32}
 
+{x : x = 2^k, k ∈ ℕ, k ≤ 5}
 
 
 {13, 19, 25, 31, 37, 43}
+
+{x : x = 7 + 6k, k ∈ ℕ, k ≤ 6 }
 
 
 
@@ -60,12 +70,12 @@ Describe these sets in set builder notation
 Set union, ⋃
 
 The union of the sets A and B, written A ⋃ B, is the set
-of all elements....
+of all elements....that are in at least one of the sets
 
 
 How could we express in set builder notation?
 
-A ⋃ B = ?
+A ⋃ B = {x : x ∈ A ⋁ x ∈ B}
 
 
 Show as a Venn diagram.
@@ -77,12 +87,12 @@ Show as a Venn diagram.
 Set intersection, ⋂
 
 The intersection of the sets A and B, written A ⋂ B, is the set
-of all elements that are...
+of all elements that are...in both A and B
 
 
 How could we express in set builder notation?
 
-A ⋂ B = ?
+A ⋂ B = {x : x ∈ A ⋀ x ∈ B}
 
 
 Show as a Venn diagram.
@@ -94,12 +104,12 @@ Set difference, -
 / or \ (means the same thing)
 
 The difference between the sets A and B, written A - B, 
-    is the set of all elements...
+    is the set of all elements...in A but not in B
 
 
 How could we express in set builder notation?
 
-A - B = ?
+A - B = {x : x ∈ A ⋀ x ∉ B}
 
 
 Show as a Venn diagram.
@@ -113,10 +123,10 @@ B = {2,3,4,5,6,7}
 
 Find:
 
-A ⋃ B = ?
-A ⋂ B = ?
-A - B = ?
-B - A = ?
+A ⋃ B = {1, 2, 3, 4, 5, 6, 7, 10, 11, 12}
+A ⋂ B = {3, 7}
+A - B = {1, 2, 4, 5, 6, 10, 11, 12}
+B - A = {2, 4, 5, 6}
 
 
 /////////////////
@@ -139,18 +149,19 @@ How does A - B relate to A ⋂ B?
 
 What do we know if A ⋂ B = A ⋃ B?
 
-
+A = B
 
 
 What do we know if A - B = A?
 
-
+A ⋂ B = ∅
 
 
 
 What do we know if A - B = B - A?
 
-
+A = B
+(the differences would both be the empty set)
 
 //////////////////
 
@@ -169,7 +180,7 @@ A = {1,3,4}
 B = {1,3,5,8}
 
 --> is A a subset of B? 
-
+no, the 4 is in A but not in B
 
 
 
@@ -180,6 +191,7 @@ A = {8,1,3}
 B = {1,3,5,8}
 
 --> is A a subset of B? 
+yes!
 
 
 //////////////////////////////////
@@ -192,9 +204,10 @@ B = {1,3,5,8}
 
 Quantifiers - helps describe all or some elements in a set
 
-    ∀ - ?
+    ∀ - universal quantifier, "for all", "all"
+        describing something about ALL elements in a set
 
-    ∃ - ?
+    ∃ - existential quantifier, "there exists", "some", "at least one"
 
 
 
@@ -202,7 +215,7 @@ Can we define that set A is a subset of set B using quantifiers?
 
 A ⊆ B means ...
 
-
+∀ x ∈ A → x ∈ B
 
 
 How could we define that set A equals set B using quantifiers?
@@ -239,19 +252,18 @@ Example:
 
 A = {x : x ∈ ℕ ⋀ x^2 ≥ 25 }
 
+5
 
 
-
-P(x) = ?
+P(x) = x ∈ ℕ ⋀ x^2 ≥ 25
 
 What are these saying? Are they true?
 
-P(2) = 
-P(-6) =  
-P(10) = 
+P(2) = F
+P(-6) = F 
+P(10) = T
 
-
-
+means 10 is in the set, 2 and -10 are not
 
 
 //////////////////////////////////////
@@ -271,7 +283,11 @@ How would we prove this in propositional logic?
 
 What propositional atoms? What sequent?
 
+p: all humans are mortal
+q: socrates is human
+r: socrates is mortal
 
+p, q |- r
 
 
 ///////////////
@@ -284,11 +300,16 @@ individuals in a domain (a set)
 
 These claims will involve predicates and quantifiers
 
-Human(x)
-Mortal(x)
+domain: all living things
 
+Human(x) - whether x is human
+Mortal(x) - wheter x is mortal
 
 ∀ x (Human(x) → Mortal(x))
+
+For all living things, if that living thing is human, then it is mortal
+
+All humans are mortal
 
 //////////////////
 
