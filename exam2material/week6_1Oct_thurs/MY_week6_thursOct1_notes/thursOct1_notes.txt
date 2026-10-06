@@ -320,11 +320,14 @@ Example:
     Domain: {x : x is a student at K-State}
     C(x): whether x is in CIS 301
 
+    Bob and Jill are students at K-state
+
     Bob is taking: CIS 300, CIS 301, ECE 241, MATH 221, ENGL 200
     Jill is taking: CIS 300, MATH 510, HIST 251, PHYS 213
 
 
     What is the value of C(Bob) ⋀ ¬C(Jill)? 
+    true
 
 
 ////////////////
@@ -342,21 +345,23 @@ Wings(x): x has wings
 Carnivore(x): x is a carnivore
 
 
-Mammal(bat) -  ?
-Bird(bat) - ?
-Fish(bat) - ?
-Wings(bat) - ?
-Carnivore(bat)
+Mammal(bat) - true
+Bird(bat) - false
+Fish(bat) - false
+Wings(bat) - true
+Carnivore(bat) - true
 
 Write each statement in English. Is each one true or false?
 
 ∀ x (Mammal(x))
 
-
+All animals in my domain are mammals
+false: a salmon in not a mammals
 
     --> how could we express the same statement in our domain
     WITHOUT a quantifier?
 
+Mammal(bat) ⋀ Mammal(lion) ⋀ ... ⋀ Mammal(salmon)
 
 
 ///
@@ -366,27 +371,39 @@ Write each statement in English. Is each one true or false?
     --> how could we express the same statement in our domain
     WITHOUT a quantifier?
 
+(Mammal(bat) ⋀ Carnivore(bat)) ⋁ (Mammal(lion) ⋀ Carnivore(lion)) ⋁ ... ⋁ (Mammal(salmon) ⋀ Carnivore(salmon))
+
+there is a animal in our domain that is both a mammal and a carnivore
+
+true: lion
 
 
 ///
 
 ∀ x (Bird(x) ⋀ Wings(x))
 
-
+All animals in my domain are birds and have wings
+false - bat is not a bird
 
 
 ///
 
 ∀ x (Bird(x) → Wings(x))
 
+All birds have wings
+true
+(every animal either isn't a bird or is a bird with wings)
 
 
 ///
 
 ¬(∀ x Mammal(x))
 
+∀ x Mammal(x): all animals are mammals
+¬(∀ x Mammal(x)): not all animals are mammals 
+or: at least on animal is not a mammal
 
-
+∃ x ¬Mammal(x)
 ////
 
 
